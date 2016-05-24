@@ -1,0 +1,68 @@
+
+<link href="css/chat-style.css" rel="stylesheet">
+
+
+            <div class="panel panel-primary" >
+                
+              <div class="panel-heading flex-grow">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group btn-group-xs pull-right">
+
+                  <button type="button" class="btn btn-primary" ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+                </div>
+                
+              <div class="panel-body flex-grow" scroll-to-bottom="messages">
+                  
+                    <ul class="list-unstyled media-block" >
+ 
+                            <li class="mar-btm clearfix"  ng-repeat="message in messages" id ="{{$index}}">
+                                 <div ng-switch="message.sender">
+                                 <div ng-switch-when="bot">
+                                
+                                     <div class="media-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User   Avatar" class="img-circle" />
+                                    </div>
+                                    <div class="media-body pad-hor">
+                                        <div class="speech clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font media-heading">{{message.sender}}</strong> 
+                                        </div>
+                                        <p>
+                                           {{message.msg}}
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div ng-switch-when="user">
+                              
+                                    <div class="media-body pad-hor speech-right">
+                                        <div class="speech clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font media-heading">{{message.sender}}</strong> 
+                                        </div>
+                                        <p>
+                                           {{message.msg}}
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </li>
+                    </ul>
+                </div> 
+                
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="msgText" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary btn-sm" id="btn-chat" ng-click="sendMessage()">
+                                Send</button>
+                        </span>
+                    </div>
+                </div> 
+                
+            </div> 
+
+
