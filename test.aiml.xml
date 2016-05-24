@@ -25,9 +25,7 @@
         </template>
     </category>
     <category>
-        <pattern>
-            WHAT IS MY NAME
-        </pattern>
+        <pattern>WHAT IS MY NAME</pattern>
         <template>
             Your name is 
             <get name='clientName'/>
