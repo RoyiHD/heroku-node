@@ -1,6 +1,6 @@
 var express = require('express');
 var http = require("http");
-var aimlHigh = require('AIMLInterpreter');
+var aimlHigh = require('aimlinterpreter');
 var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 5000;
